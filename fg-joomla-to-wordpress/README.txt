@@ -4,7 +4,7 @@ Plugin Uri: https://wordpress.org/plugins/fg-joomla-to-wordpress/
 Tags: joomla, mambo, elxis, import, migration
 Requires at least: 4.5
 Tested up to: 6.7.1
-Stable tag: 4.29.3
+Stable tag: 4.29.4
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -241,6 +241,9 @@ https://www.youtube.com/watch?v=bXOQ70s6YS8
 
 == Changelog ==
 
+= 4.29.4 =
+* Fixed: Warning: Trying to access array offset on false
+
 = 4.29.3 =
 * Tested with WordPress 6.7.1
 
@@ -397,6 +400,9 @@ https://www.youtube.com/watch?v=bXOQ70s6YS8
 * Initial version: Import Joomla 1.5 sections, categories, posts and images
 
 == Upgrade Notice ==
+
+= 4.29.4 =
+Fixed: Warning: Trying to access array offset on false
 
 = 4.29.3 =
 Tested with WordPress 6.7.1

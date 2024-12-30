@@ -3617,6 +3617,9 @@ SQL;
 				)
 			));
 			$headers = @get_headers($url);
+			if ( !is_array($headers) ) {
+				return false;
+			}
 			$result = preg_match("/200/", $headers[0]);
 			
 			if ( !$result && strpos($filePath, 'https:') !== 0 ) {
