@@ -3,8 +3,8 @@ Contributors: Kerfred
 Plugin Uri: https://wordpress.org/plugins/fg-joomla-to-wordpress/
 Tags: joomla, mambo, elxis, import, migration
 Requires at least: 4.5
-Tested up to: 6.7.1
-Stable tag: 4.29.4
+Tested up to: 6.8
+Stable tag: 4.31.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -241,6 +241,9 @@ https://www.youtube.com/watch?v=bXOQ70s6YS8
 
 == Changelog ==
 
+= 4.31.0 =
+* Tested with WordPress 6.8
+
 = 4.29.4 =
 * Fixed: Warning: Trying to access array offset on false
 
@@ -401,18 +404,5 @@ https://www.youtube.com/watch?v=bXOQ70s6YS8
 
 == Upgrade Notice ==
 
-= 4.29.4 =
-Fixed: Warning: Trying to access array offset on false
-
-= 4.29.3 =
-Tested with WordPress 6.7.1
-
-= 4.29.2 =
-Tested with WordPress 6.7
-
-= 4.29.1 =
-Fixed: Rollback of last fix that prevents the relationship between the article and its category
-
-= 4.29.0 =
-Fixed: The term meta key could be incorrect if the imported term is not a regular category
-Tested with WordPress 6.6.1
+= 4.31.0 =
+Tested with WordPress 6.8
