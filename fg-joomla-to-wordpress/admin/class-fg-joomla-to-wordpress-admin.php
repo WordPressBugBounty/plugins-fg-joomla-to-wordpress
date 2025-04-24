@@ -2700,10 +2700,10 @@ SQL;
 					// Remove the links from the content
 					$this->post_link_count = 0;
 					$this->post_link = array();
-					$content = preg_replace_callback('#<(a) (.*?)(href)?=(.*?)</a>#i', array($this, 'remove_links'), $content);
-					$content = preg_replace_callback('#<(img) (.*?)(src)=(.*?)>#i', array($this, 'remove_links'), $content);
-					$content = preg_replace_callback('#<(iframe) (.*?)(src)=(.*?)>#i', array($this, 'remove_links'), $content);
-					$content = preg_replace_callback('#<(object) (.*?)(data)=(.*?)>#i', array($this, 'remove_links'), $content);
+					$content = preg_replace_callback('#<(a) (.*?)(href)?=(.*?)</a>#is', array($this, 'remove_links'), $content);
+					$content = preg_replace_callback('#<(img) (.*?)(src)=(.*?)>#is', array($this, 'remove_links'), $content);
+					$content = preg_replace_callback('#<(iframe) (.*?)(src)=(.*?)>#is', array($this, 'remove_links'), $content);
+					$content = preg_replace_callback('#<(object) (.*?)(data)=(.*?)>#is', array($this, 'remove_links'), $content);
 
 					// Process the stored medias links
 					foreach ($this->post_link as &$link) {
@@ -2795,6 +2795,7 @@ SQL;
 		private function restore_links($matches) {
 			$link = $this->post_link[$matches[1]];
 			$new_link = array_key_exists('new_link', $link)? $link['new_link'] : $link['old_link'];
+			$new_link = preg_replace('#srcset=".*?"#is', '', $new_link); // Remove the srcset that could break the image display
 			return $new_link;
 		}
 
