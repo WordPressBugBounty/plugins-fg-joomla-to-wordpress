@@ -1423,8 +1423,15 @@ SQL;
 		 */
 		public function pre_import_check($import_doable) {
 			if ( $import_doable ) {
+				// Check the URL field
 				if ( !$this->plugin_options['skip_media'] && empty($this->plugin_options['url']) ) {
 					$this->display_admin_error(__('The URL field is required to import the media.', 'fg-joomla-to-wordpress'));
+					$import_doable = false;
+				}
+				
+				// Check the allow_url_fopen PHP variable
+				if ( !ini_get('allow_url_fopen') ) {
+					$this->display_admin_error(__('The PHP variable "allow_url_fopen" must be set to "On" in the php.ini file.', 'fg-joomla-to-wordpress'));
 					$import_doable = false;
 				}
 			}
@@ -2869,12 +2876,12 @@ SQL;
 			$this->modify_links_in_posts($progress_cli);
 			$this->modify_links_in_categories($progress_cli);
 			
+			// Hook for doing other actions after modifying the links
+			do_action('fgj2wp_post_modify_links', $progress_cli);
+			
 			if ( defined('WP_CLI') ) {
 				$progress_cli->finish();
 			}
-			
-			// Hook for doing other actions after modifying the links
-			do_action('fgj2wp_post_modify_links');
 		}
 
 		/**
@@ -3087,7 +3094,7 @@ SQL;
 			$matches = array();
 
 			// Try to find a category in the URL
-			if ( preg_match('#view=category.*cid=(\d+)#', $url, $matches) ) {
+			if ( preg_match('#view=category.*\Wc?id=(\d+)#', $url, $matches) ) {
 				$cat_id = $matches[1];
 				$term_id = $this->get_wp_term_id_from_meta('_fgj2wp_old_category_id', $cat_id);
 				if ( !empty($term_id) ) {
