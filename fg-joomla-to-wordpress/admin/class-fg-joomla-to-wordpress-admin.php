@@ -630,7 +630,8 @@ if ( !class_exists('FG_Joomla_to_WordPress_Admin', false) ) {
 				return false;
 			}
 			try {
-				$joomla_db = new PDO('mysql:host=' . $this->plugin_options['hostname'] . ';port=' . $this->plugin_options['port'] . ';dbname=' . $this->plugin_options['database'], $this->plugin_options['username'], $this->plugin_options['password'], array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
+				$mysql_attr_init_command = version_compare(PHP_VERSION, '8.4', '<')? PDO::MYSQL_ATTR_INIT_COMMAND : Pdo\Mysql::ATTR_INIT_COMMAND;
+				$joomla_db = new PDO('mysql:host=' . $this->plugin_options['hostname'] . ';port=' . $this->plugin_options['port'] . ';dbname=' . $this->plugin_options['database'], $this->plugin_options['username'], $this->plugin_options['password'], array($mysql_attr_init_command => 'SET NAMES \'UTF8\''));
 				$joomla_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Display SQL errors
 			} catch ( PDOException $e ) {
 				$this->display_admin_error(__('Couldn\'t connect to the Joomla database. Please check your parameters. And be sure the WordPress server can access the Joomla database.', 'fg-joomla-to-wordpress') . "<br />\n" . $e->getMessage() . "<br />\n" . sprintf(__('Please read the <a href="%s" target="_blank">FAQ for the solution</a>.', 'fg-joomla-to-wordpress'), $this->faq_url));

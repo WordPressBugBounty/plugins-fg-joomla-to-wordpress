@@ -3,8 +3,8 @@ Contributors: Kerfred
 Plugin Uri: https://wordpress.org/plugins/fg-joomla-to-wordpress/
 Tags: joomla, mambo, elxis, import, migration
 Requires at least: 4.5
-Tested up to: 6.9
-Stable tag: 4.33.1
+Tested up to: 7.0
+Stable tag: 4.34.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,7 +16,7 @@ A plugin to migrate categories, posts, tags, images and other medias from Joomla
 
 This plugin migrates sections, categories, posts, images, medias and tags from Joomla to WordPress.
 
-It has been tested with **Joomla versions 1.5 to 5.4** and the latest version of WordPress on huge databases. It is compatible with multisite installations.
+It has been tested with **Joomla versions 1.5 to 6.0** and the latest version of WordPress on huge databases. It is compatible with multisite installations.
 
 Major features include:
 
@@ -241,6 +241,11 @@ https://www.youtube.com/watch?v=bXOQ70s6YS8
 
 == Changelog ==
 
+= 4.34.0 =
+* New: Compatible with PHP 8.5
+* Tested with Joomla 6.0
+* Tested with WordPress 7.0
+
 = 4.33.1 =
 * Fixed: Some internal category links were not modified
 
@@ -417,8 +422,7 @@ https://www.youtube.com/watch?v=bXOQ70s6YS8
 
 == Upgrade Notice ==
 
-= 4.33.1 =
-Fixed: Some internal category links were not modified
-
-= 4.33.0 =
-Tested with WordPress 6.9
+= 4.34.0 =
+New: Compatible with PHP 8.5
+Tested with Joomla 6.0
+Tested with WordPress 7.0
