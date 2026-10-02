@@ -2221,7 +2221,7 @@ SQL;
 				$date_field = 'c.created_time AS date';
 			}
 			$sql = "
-				SELECT c.id, c.title, $name_field AS name, c.description, c.parent_id, $date_field
+				SELECT c.id, c.title, $name_field AS name, c.description, c.parent_id, $date_field, $extension_field, c.params
 				FROM {$prefix}categories c
 				WHERE $extension_field = '$component'
 				AND c.id > '$last_category_metakey'

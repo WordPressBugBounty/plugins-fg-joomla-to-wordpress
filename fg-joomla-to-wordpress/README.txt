@@ -4,7 +4,7 @@ Plugin Uri: https://wordpress.org/plugins/fg-joomla-to-wordpress/
 Tags: joomla, mambo, elxis, import, migration
 Requires at least: 4.5
 Tested up to: 7.1
-Stable tag: 4.34.1
+Stable tag: 4.35.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -237,9 +237,14 @@ https://www.youtube.com/watch?v=bXOQ70s6YS8
 * Bulgarian (bg_BG)
 * Brazilian (pt_BR)
 * Greek (el_EL)
+* Czech (cs_CZ)
 * other can be translated
 
 == Changelog ==
+
+= 4.35.0 =
+* New translation: Czech (thanks to Michal Janata)
+* New: Add the columns "extension" and "params" in the function get_component_categories() (used by JEvents)
 
 = 4.34.1 =
 * Tested with WordPress 7.1
@@ -425,10 +430,6 @@ https://www.youtube.com/watch?v=bXOQ70s6YS8
 
 == Upgrade Notice ==
 
-= 4.34.1 =
-Tested with WordPress 7.1
-
-= 4.34.0 =
-New: Compatible with PHP 8.5
-Tested with Joomla 6.0
-Tested with WordPress 7.0
+= 4.35.0 =
+New translation: Czech (thanks to Michal Janata)
+New: Add the columns "extension" and "params" in the function get_component_categories() (used by JEvents)
